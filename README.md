@@ -55,14 +55,14 @@
 ## 🏗️ System Architecture
 
 ```mermaid
-graph TD
-    User([🌐 End User / Admin Browser]) -->|HTTP GET/POST/PUT/DELETE| Frontend[🖥️ Glassmorphic Frontend HTML5/CSS3/ES6]
-    Frontend -->|Fetch API / JSON| CORS[🛡️ Django CORS & Middleware]
-    CORS -->|URL Dispatcher| Endpoints[📡 Django REST API Endpoints /urls.py]
-    Endpoints -->|Business Logic| Views[⚙️ Function-Based Views /views.py]
-    Views -->|Query Execution| DB Layer[🗄️ Database Helper Layer /db.py]
-    DB Layer <--->|SQL Queries| DB[(💾 SQLite / MySQL Database)]
-    Postman([🚀 Postman API Tester]) -->|Direct API Calls| CORS
+flowchart TD
+    User["🌐 End User / Admin Browser"] -->|HTTP GET/POST/PUT/DELETE| Frontend["🖥️ Glassmorphic Frontend HTML5/CSS3/ES6"]
+    Frontend -->|Fetch API / JSON| CORS["🛡️ Django CORS & Middleware"]
+    CORS -->|URL Dispatcher| Endpoints["📡 Django REST API Endpoints /urls.py"]
+    Endpoints -->|Business Logic| Views["⚙️ Function-Based Views /views.py"]
+    Views -->|Query Execution| DBLayer["🗄️ Database Helper Layer /db.py"]
+    DBLayer <--->|SQL Queries| DB[("💾 SQLite / MySQL Database")]
+    Postman["🚀 Postman API Tester"] -->|Direct API Calls| CORS
 ```
 
 ---
