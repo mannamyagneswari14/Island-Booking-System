@@ -17,13 +17,20 @@ An ultra-premium, full-stack Island Vacation & Resort Booking platform. The back
 
 ---
 
+## 🤝 Collaboration & Repositories
+
+- **Main Repository**: [hemanthc29/Island-Booking-System](https://github.com/hemanthc29/Island-Booking-System)
+- **Collaborator Repository**: [mannamyagneswari14/useState](https://github.com/mannamyagneswari14/useState)
+
+---
+
 ## 🚀 Deployed Frontend & Local URLs
 
 | Module | URL | Details |
 | :--- | :--- | :--- |
 | 🌐 **Frontend Deployed App** | `http://localhost:5000` | Served via Python HTTP Server |
 | ⚙️ **Backend REST APIs** | `http://localhost:8000` | Django Application Server |
-| 🐙 **GitHub Repository** | [https://github.com/mannamyagneswari14/useState](https://github.com/mannamyagneswari14/useState) | Source Code Repository |
+| 🐙 **GitHub Repository** | [https://github.com/hemanthc29/Island-Booking-System](https://github.com/hemanthc29/Island-Booking-System) | Primary Source Code Repository |
 
 ---
 
@@ -46,7 +53,7 @@ IslandBookingSystem/
 │   ├── login.html            # Sign-In Interface
 │   ├── register.html         # Customer Registration Form
 │   ├── islands.html          # Browse Destinations Page
-│   ├── packages.html         # Resort Packages & Tariff Plans
+│   ├── packages.html         # Browse Packages Page
 │   ├── booking.html          # Booking Checkout & Cost Calculator
 │   ├── payment.html          # Payment Gateway Simulation
 │   ├── customer_dashboard.html # Traveler Ledger & Invoices
