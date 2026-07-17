@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "ibs-api-collection-2026",
+		"name": "Island Booking System (IBS) API",
+		"description": "Complete 20 API endpoints for Island Booking System (Customers, Islands, Packages, Bookings, Payments)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "Get All Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/customers/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["customers", ""]
+						}
+					}
+				},
+				{
+					"name": "Add Customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"full_name\": \"Jane Doe\",\n  \"email\": \"jane@example.com\",\n  \"phone\": \"+1987654321\",\n  \"nationality\": \"American\",\n  \"password\": \"password123\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/customers/add/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["customers", "add", ""]
+						}
+					}
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"full_name\": \"Rahul Verma\",\n  \"email\": \"rahul@gmail.com\",\n  \"phone\": \"+919876543210\",\n  \"nationality\": \"Indian\",\n  \"password\": \"rahul123\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/customers/update/1/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["customers", "update", "1", ""]
+						}
+					}
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/customers/delete/1/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["customers", "delete", "1", ""]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Islands",
+			"item": [
+				{
+					"name": "Get All Islands",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/islands/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["islands", ""]
+						}
+					}
+				},
+				{
+					"name": "Add Island",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"island_name\": \"Bora Bora\",\n  \"country\": \"French Polynesia\",\n  \"description\": \"Tropical lagoon & overwater bungalows\",\n  \"climate\": \"Tropical\",\n  \"best_season\": \"May to October\",\n  \"image_url\": \"https://images.unsplash.com/photo-1507525428034-b723cf961d3e\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/islands/add/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["islands", "add", ""]
+						}
+					}
+				},
+				{
+					"name": "Update Island",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"island_name\": \"Maldives Atoll\",\n  \"country\": \"Maldives\",\n  \"description\": \"Luxury coral reefs and crystal clear blue ocean water\",\n  \"climate\": \"Tropical Monsoon\",\n  \"best_season\": \"November to April\",\n  \"image_url\": \"https://images.unsplash.com/photo-1514282401047-d79a71a590e8\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/islands/update/1/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["islands", "update", "1", ""]
+						}
+					}
+				},
+				{
+					"name": "Delete Island",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/islands/delete/1/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["islands", "delete", "1", ""]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Resort Packages",
+			"item": [
+				{
+					"name": "Get All Packages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/packages/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["packages", ""]
+						}
+					}
+				},
+				{
+					"name": "Add Package",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"island_name\": \"Maldives\",\n  \"resort_name\": \"Soneva Jani\",\n  \"package_name\": \"Overwater Luxury Escape\",\n  \"duration\": \"5 Days / 4 Nights\",\n  \"price\": 3500.00,\n  \"included_services\": \"Private Pool, All-Inclusive Dining, Spa Voucher\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/packages/add/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["packages", "add", ""]
+						}
+					}
+				},
+				{
+					"name": "Update Package",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"island_name\": \"Maldives\",\n  \"resort_name\": \"Velaa Private Island\",\n  \"package_name\": \"Ultimate Honeymoon Villa\",\n  \"duration\": \"7 Days / 6 Nights\",\n  \"price\": 4999.00,\n  \"included_services\": \"Seaplane Transfer, Personal Butler, Sunset Cruise\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/packages/update/1/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["packages", "update", "1", ""]
+						}
+					}
+				},
+				{
+					"name": "Delete Package",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/packages/delete/1/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["packages", "delete", "1", ""]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Bookings",
+			"item": [
+				{
+					"name": "Get All Bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/bookings/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["bookings", ""]
+						}
+					}
+				},
+				{
+					"name": "Add Booking",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customer_name\": \"Rahul Verma\",\n  \"island_name\": \"Maldives\",\n  \"package_name\": \"Overwater Luxury Escape\",\n  \"travel_date\": \"2026-08-20\",\n  \"number_of_people\": 2,\n  \"total_amount\": 7000.00,\n  \"booking_status\": \"Confirmed\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/bookings/add/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["bookings", "add", ""]
+						}
+					}
+				},
+				{
+					"name": "Update Booking",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customer_name\": \"Rahul Verma\",\n  \"island_name\": \"Maldives\",\n  \"package_name\": \"Overwater Luxury Escape\",\n  \"travel_date\": \"2026-09-01\",\n  \"number_of_people\": 3,\n  \"total_amount\": 10500.00,\n  \"booking_status\": \"Confirmed\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/bookings/update/1/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["bookings", "update", "1", ""]
+						}
+					}
+				},
+				{
+					"name": "Delete Booking",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/bookings/delete/1/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["bookings", "delete", "1", ""]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Get All Payments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/payments/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["payments", ""]
+						}
+					}
+				},
+				{
+					"name": "Add Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"booking_id\": 1,\n  \"customer_name\": \"Rahul Verma\",\n  \"amount\": 7000.00,\n  \"payment_method\": \"Credit Card\",\n  \"payment_status\": \"Completed\",\n  \"transaction_id\": \"TXN-2026-987654\",\n  \"payment_date\": \"2026-07-17\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/payments/add/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["payments", "add", ""]
+						}
+					}
+				},
+				{
+					"name": "Update Payment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"booking_id\": 1,\n  \"customer_name\": \"Rahul Verma\",\n  \"amount\": 7000.00,\n  \"payment_method\": \"UPI\",\n  \"payment_status\": \"Completed\",\n  \"transaction_id\": \"TXN-2026-987654\",\n  \"payment_date\": \"2026-07-17\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/payments/update/1/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["payments", "update", "1", ""]
+						}
+					}
+				},
+				{
+					"name": "Delete Payment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/payments/delete/1/",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["payments", "delete", "1", ""]
+						}
+					}
+				}
+			]
+		}
+	]
+}
