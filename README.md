@@ -1,165 +1,257 @@
-# 🏝️ Island Booking System (IBS)
+<div align="center">
 
-An ultra-premium, full-stack Island Vacation & Resort Booking platform. The backend is built with **Django REST APIs** with an **SQLite / MySQL Database**, while the frontend delivers a high-fidelity, responsive user experience utilizing **HTML5**, **Custom Ocean Glassmorphic CSS3**, and **Vanilla ES6 JavaScript (Fetch API)**.
+# 🏝️ Island Booking System (IBS) 🌊
 
----
+[![Django](https://img.shields.io/badge/Django-5.0+-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![Postman](https://img.shields.io/badge/Postman-v2.1-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://www.postman.com/)
+[![SQLite](https://img.shields.io/badge/SQLite-MySQL%20Compatible-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+[![Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)](https://github.com/hemanthc29/Island-Booking-System)
 
-## 📌 Project Overview & Description
-
-**Island Booking System (IBS)** is a comprehensive web platform designed to streamline island vacation discovery, resort package customization, customer management, booking processing, and payment ledger tracking.
-
-- **Guest Portal**: Browse featured paradise island destinations with live filter search and dynamic season info.
-- **Customer Registration & Login**: Full user authentication system.
-- **Customer Dashboard**: Track active trip reservations, generate invoices, and view payment histories.
-- **Vacation Package Booking**: Real-time cost calculation based on guest count, travel dates, and resort amenities.
-- **Admin Control Panel**: Complete CRUD interface for Customers, Islands, Resorts, Bookings, and Payments.
-- **RESTful API Architecture**: 20 CORS-enabled endpoints handling JSON data exchange.
-
----
-
-## 🤝 Collaboration & Repositories
-
-- **Main Repository**: [hemanthc29/Island-Booking-System](https://github.com/hemanthc29/Island-Booking-System)
-- **Collaborator Repository**: [mannamyagneswari14/useState](https://github.com/mannamyagneswari14/useState)
+<p align="center">
+  <b>An Ultra-Premium, Full-Stack Island Vacation & Resort Booking Management Platform</b>
+  <br />
+  <i>Powered by Django REST APIs, Custom Ocean Glassmorphic UI, & Real-Time Financial Invoicing</i>
+</p>
 
 ---
 
-## 🚀 Deployed Frontend & Local URLs
+[📖 Overview](#-project-overview) •
+[🏗️ Architecture](#-system-architecture) •
+[📡 API Reference](#-complete-rest-api-documentation-20-endpoints) •
+[📂 File Structure](#-project--package-structure) •
+[🖼️ Visual Showcase](#-project-visual-showcase) •
+[🚀 Quick Start](#-installation--execution-guide) •
+[🤝 Collaborators](#-collaborators--contributing)
 
-| Module | URL | Details |
-| :--- | :--- | :--- |
-| 🌐 **Frontend Deployed App** | `http://localhost:5000` | Served via Python HTTP Server |
-| ⚙️ **Backend REST APIs** | `http://localhost:8000` | Django Application Server |
-| 🐙 **GitHub Repository** | [https://github.com/hemanthc29/Island-Booking-System](https://github.com/hemanthc29/Island-Booking-System) | Primary Source Code Repository |
+</div>
 
 ---
 
-## 📂 Backend & Project Package Structure
+## 📌 Project Overview
+
+**Island Booking System (IBS)** is an enterprise-grade, full-stack vacation management platform built for modern travel agencies and resort providers. It features a dual-facing architecture catering to both **End Travelers** and **Platform Administrators**.
+
+### 🌟 Key Platform Features
+
+- 🏝️ **Island Destinations Explorer**: Live search filtering, weather/climate indicators, best visiting seasons, and high-res imagery.
+- 🏨 **Resort & Tariff Packages**: Curated island stays ranging from Overwater Luxury Bungalows to Caldera View Villas.
+- 🧮 **Dynamic Cost Calculator**: Instant real-time price calculations based on traveler count, duration, and selected resort services.
+- 💳 **Checkout & Payment Gateway Simulation**: Instant transaction ledger entries with unique reference tokens (`TXN...`).
+- 📊 **Customer Dashboard**: Historical booking timeline, payment status tracking, and downloadable travel receipts.
+- 🔐 **Admin Control Panel**: Complete full-stack CRUD interface for Customer accounts, Destinations, Packages, Reservations, and Revenue.
+- 🔌 **20 Standard RESTful Endpoints**: Full CORS enabled for cross-platform integration (Web, Mobile, Postman).
+
+---
+
+## 🏗️ System Architecture
+
+```mermaid
+graph TD
+    User([🌐 End User / Admin Browser]) -->|HTTP GET/POST/PUT/DELETE| Frontend[🖥️ Glassmorphic Frontend HTML5/CSS3/ES6]
+    Frontend -->|Fetch API / JSON| CORS[🛡️ Django CORS & Middleware]
+    CORS -->|URL Dispatcher| Endpoints[📡 Django REST API Endpoints /urls.py]
+    Endpoints -->|Business Logic| Views[⚙️ Function-Based Views /views.py]
+    Views -->|Query Execution| DB Layer[🗄️ Database Helper Layer /db.py]
+    DB Layer <--->|SQL Queries| DB[(💾 SQLite / MySQL Database)]
+    Postman([🚀 Postman API Tester]) -->|Direct API Calls| CORS
+```
+
+---
+
+## 📡 Complete REST API Documentation (20 Endpoints)
+
+All endpoints accept and return `Content-Type: application/json`. CORS is enabled for all domain origins (`*`).
+
+### 👤 1. Customers Module
+| Method | Endpoint Route | Description | Request Body Example |
+| :---: | :--- | :--- | :--- |
+| `GET` | `/customers/` | Fetch all registered customer profiles | None |
+| `POST` | `/customers/add/` | Register a new customer | `{"full_name": "Rahul Sharma", "email": "rahul@gmail.com", "phone": "9876543210", "nationality": "Indian", "password": "rahul"}` |
+| `PUT` | `/customers/update/<id>/` | Update existing customer details | `{"full_name": "Rahul Verma", "email": "rahul@gmail.com", "phone": "9876543210", "nationality": "Indian", "password": "pass"}` |
+| `DELETE` | `/customers/delete/<id>/` | Remove a customer account | None |
+
+### 🏝️ 2. Islands Module
+| Method | Endpoint Route | Description | Request Body Example |
+| :---: | :--- | :--- | :--- |
+| `GET` | `/islands/` | List all island destinations | None |
+| `POST` | `/islands/add/` | Create a new island destination | `{"island_name": "Bora Bora", "country": "French Polynesia", "description": "Lagoon & overwater stays", "climate": "Tropical", "best_season": "May to Oct", "image_url": "https://..."}` |
+| `PUT` | `/islands/update/<id>/` | Update island destination record | `{"island_name": "Maldives Atoll", "country": "Maldives", "description": "Coral reefs", "climate": "Tropical", "best_season": "Nov to Apr", "image_url": "https://..."}` |
+| `DELETE` | `/islands/delete/<id>/` | Delete an island destination | None |
+
+### 🏖️ 3. Resort Packages Module
+| Method | Endpoint Route | Description | Request Body Example |
+| :---: | :--- | :--- | :--- |
+| `GET` | `/packages/` | Get all resort vacation packages | None |
+| `POST` | `/packages/add/` | Add a new vacation package | `{"island_name": "Maldives", "resort_name": "Soneva Jani", "package_name": "Luxury Escape", "duration": "5 Days", "price": 3500.00, "included_services": "Spa, Meals"}` |
+| `PUT` | `/packages/update/<id>/` | Modify resort package details | `{"island_name": "Maldives", "resort_name": "Velaa", "package_name": "Honeymoon Villa", "duration": "7 Days", "price": 4999.00, "included_services": "Butler, Seaplane"}` |
+| `DELETE` | `/packages/delete/<id>/` | Delete a resort package | None |
+
+### 📅 4. Bookings Module
+| Method | Endpoint Route | Description | Request Body Example |
+| :---: | :--- | :--- | :--- |
+| `GET` | `/bookings/` | Retrieve all customer reservations | None |
+| `POST` | `/bookings/add/` | Create a new trip reservation | `{"customer_name": "Rahul Sharma", "island_name": "Maldives", "package_name": "Luxury Escape", "travel_date": "2026-08-20", "number_of_people": 2, "total_amount": 7000.00, "booking_status": "Confirmed"}` |
+| `PUT` | `/bookings/update/<id>/` | Update reservation schedule/status | `{"customer_name": "Rahul Sharma", "island_name": "Maldives", "package_name": "Luxury Escape", "travel_date": "2026-09-01", "number_of_people": 3, "total_amount": 10500.00, "booking_status": "Confirmed"}` |
+| `DELETE` | `/bookings/delete/<id>/` | Cancel & remove reservation | None |
+
+### 💳 5. Payments Module
+| Method | Endpoint Route | Description | Request Body Example |
+| :---: | :--- | :--- | :--- |
+| `GET` | `/payments/` | Fetch transaction financial ledger | None |
+| `POST` | `/payments/add/` | Log new transaction payment | `{"booking_id": 1, "customer_name": "Rahul Sharma", "amount": 7000.00, "payment_method": "Credit Card", "payment_status": "Success", "transaction_id": "TXN123456789", "payment_date": "2026-07-17"}` |
+| `PUT` | `/payments/update/<id>/` | Update payment ledger record | `{"booking_id": 1, "customer_name": "Rahul Sharma", "amount": 7000.00, "payment_method": "UPI", "payment_status": "Success", "transaction_id": "TXN123456789", "payment_date": "2026-07-17"}` |
+| `DELETE` | `/payments/delete/<id>/` | Remove payment record | None |
+
+---
+
+## 📂 Project & Package Structure
 
 ```
 IslandBookingSystem/
-├── Backend/
-│   ├── db.py                 # Database access layer & SQL helper routines
-│   ├── db.sqlite3            # SQLite database file
-│   ├── island_booking.db     # Supplementary SQLite database file
-│   ├── manage.py             # Django management CLI script
-│   ├── seed_db.py            # Automatic seeder for test records
-│   ├── settings.py           # Flat Django application settings & CORS config
-│   ├── urls.py               # 20 REST API routing definitions
-│   ├── views.py              # Django Function-Based Views & JSON serializers
-│   └── wsgi.py               # WSGI application entry point
-├── Frontend/
-│   ├── index.html            # Landing / Hero Home Page
-│   ├── login.html            # Sign-In Interface
-│   ├── register.html         # Customer Registration Form
-│   ├── islands.html          # Browse Destinations Page
-│   ├── packages.html         # Browse Packages Page
-│   ├── booking.html          # Booking Checkout & Cost Calculator
-│   ├── payment.html          # Payment Gateway Simulation
-│   ├── customer_dashboard.html # Traveler Ledger & Invoices
-│   ├── admin_dashboard.html  # Admin Management Console (Full CRUD)
-│   ├── style.css             # Ocean Glassmorphism UI Design System
-│   └── script.js             # Vanilla JS Fetch API & State Handlers
-├── assets/
-│   ├── frontend_home.png
-│   ├── frontend_islands.png
-│   ├── frontend_packages.png
-│   ├── postman_api_testing.png
-│   ├── vscode_codebase.png
-│   └── mysql_database_screenshot.png
-├── Island_Booking_System.postman_collection.json  # Postman Collection v2.1
-└── README.md                 # Main Documentation
-```
-
----
-
-## 💻 Source Code Highlights
-
-### Backend API Routing (`Backend/urls.py`)
-```python
-from django.urls import path
-import views
-
-urlpatterns = [
-    # Customer CRUD
-    path('customers/add/', views.customers_list_or_add, name='customer_add'),
-    path('customers/', views.customers_list_or_add, name='customers_list'),
-    path('customers/update/<int:id>/', views.customer_update_or_delete, name='customer_update'),
-    path('customers/delete/<int:id>/', views.customer_update_or_delete, name='customer_delete'),
-    
-    # Island CRUD
-    path('islands/add/', views.islands_list_or_add, name='island_add'),
-    path('islands/', views.islands_list_or_add, name='islands_list'),
-    path('islands/update/<int:id>/', views.island_update_or_delete, name='island_update'),
-    path('islands/delete/<int:id>/', views.island_update_or_delete, name='island_delete'),
-    
-    # Resort & Package CRUD
-    path('packages/add/', views.packages_list_or_add, name='package_add'),
-    path('packages/', views.packages_list_or_add, name='packages_list'),
-    path('packages/update/<int:id>/', views.package_update_or_delete, name='package_update'),
-    path('packages/delete/<int:id>/', views.package_update_or_delete, name='package_delete'),
-    
-    # Booking CRUD
-    path('bookings/add/', views.bookings_list_or_add, name='booking_add'),
-    path('bookings/', views.bookings_list_or_add, name='bookings_list'),
-    path('bookings/update/<int:id>/', views.booking_update_or_delete, name='booking_update'),
-    path('bookings/delete/<int:id>/', views.booking_update_or_delete, name='booking_delete'),
-    
-    # Payment CRUD
-    path('payments/add/', views.payments_list_or_add, name='payment_add'),
-    path('payments/', views.payments_list_or_add, name='payments_list'),
-    path('payments/update/<int:id>/', views.payment_update_or_delete, name='payment_update'),
-    path('payments/delete/<int:id>/', views.payment_update_or_delete, name='payment_delete'),
-]
+│
+├── ⚙️ Backend/                         # Django REST API Engine
+│   ├── db.py                           # Database Access Object (DAO) & SQL queries
+│   ├── db.sqlite3                      # SQLite production database
+│   ├── island_booking.db               # Supplementary SQLite database file
+│   ├── manage.py                       # Django CLI execution controller
+│   ├── seed_db.py                      # Automated database table seeder & mock data
+│   ├── settings.py                     # Project configuration & CORS policy definitions
+│   ├── urls.py                         # Route definitions for 20 REST API endpoints
+│   ├── views.py                        # CORS-wrapped JSON response handlers
+│   └── wsgi.py                         # WSGI Web Application Server interface
+│
+├── 🖥️ Frontend/                        # Client UI Application
+│   ├── index.html                      # Landing & Hero Showcase Page
+│   ├── login.html                      # Authentication Sign-In Page
+│   ├── register.html                   # New Customer Account Creation Form
+│   ├── islands.html                    # Island Catalog & Live Search Filter
+│   ├── packages.html                   # Resort Package Cards & Price Plans
+│   ├── booking.html                    # Dynamic Cost Calculator & Trip Reservation
+│   ├── payment.html                    # Checkout Gateway Simulation
+│   ├── customer_dashboard.html         # User Invoices & Booking Ledger
+│   ├── admin_dashboard.html            # Admin Control Panel (Full CRUD Tables)
+│   ├── style.css                       # Custom Ocean Glassmorphism Design System
+│   └── script.js                       # Vanilla ES6 Fetch API Integration & LocalStorage state
+│
+├── 🎨 assets/                          # HD Screenshots & Documentation Media
+│   ├── frontend_home.png               # Hero Landing Page View
+│   ├── frontend_islands.png            # Island Destinations View
+│   ├── frontend_packages.png           # Resort Packages View
+│   ├── postman_api_testing.png         # Postman API Execution View
+│   ├── vscode_codebase.png             # Development Workspace View
+│   └── mysql_database_screenshot.png   # Windows 11 Live MySQL Workbench Desktop View
+│
+├── 🚀 Island_Booking_System.postman_collection.json  # Exported Postman v2.1 API Spec
+└── 📖 README.md                        # Master Project Documentation
 ```
 
 ---
 
 ## 🖼️ Project Visual Showcase
 
-### 1. Frontend Landing Page
-![Frontend Home Page](assets/frontend_home.png)
+<div align="center">
 
-### 2. Explore Island Destinations
-![Frontend Island Destinations](assets/frontend_islands.png)
+### 1. 🌐 Hero Landing Page
+*Glassmorphic header, search bar, and island highlight carousel*
+<br/>
+<img src="assets/frontend_home.png" alt="Frontend Home" width="90%" />
 
-### 3. Vacation & Resort Packages
-![Frontend Vacation Packages](assets/frontend_packages.png)
+<br/><br/>
 
-### 4. API Testing via Postman
-![Postman API Testing](assets/postman_api_testing.png)
+### 2. 🏝️ Destination Catalog
+*Interactive climate tags and seasonal travel indicators*
+<br/>
+<img src="assets/frontend_islands.png" alt="Destinations Page" width="90%" />
 
-### 5. VS Code Project Codebase
-![VS Code Project Workspace](assets/vscode_codebase.png)
+<br/><br/>
 
-### 6. Live Database Workbench (Windows 11 OS)
-![MySQL Live Database Screenshot](assets/mysql_database_screenshot.png)
+### 3. 🏖️ Resort & Tariff Packages
+*Curated vacation packages with included services breakdown*
+<br/>
+<img src="assets/frontend_packages.png" alt="Packages Page" width="90%" />
+
+<br/><br/>
+
+### 4. 📡 Postman API Testing
+*Live verification of HTTP 200 OK responses across endpoints*
+<br/>
+<img src="assets/postman_api_testing.png" alt="Postman API Test" width="90%" />
+
+<br/><br/>
+
+### 5. 💻 VS Code Workspace
+*Clean Django backend project architecture and route definitions*
+<br/>
+<img src="assets/vscode_codebase.png" alt="VS Code Workspace" width="90%" />
+
+<br/><br/>
+
+### 6. 🗄️ Live MySQL Workbench Desktop (Windows 11 OS)
+*Real-time SQL table execution showing financial payment ledger data*
+<br/>
+<img src="assets/mysql_database_screenshot.png" alt="Live MySQL Workbench Desktop Screen" width="90%" />
+
+</div>
 
 ---
 
-## 🔑 Default Test Credentials
+## ⚡ Installation & Execution Guide
 
-| Role | Email | Password |
+### 1. ⚙️ Prerequisites
+Ensure you have Python 3.10+ installed on your operating system:
+```bash
+python --version
+pip install django
+```
+
+### 2. 🌱 Seed Testing Database
+Initialize database schemas and insert sample records (Islands, Packages, Customers, Ledger):
+```bash
+cd Backend
+python seed_db.py
+```
+
+### 3. 🚀 Launch REST API Backend Server
+Start the Django HTTP API server listening on port `8000`:
+```bash
+python manage.py runserver 127.0.0.1:8000
+```
+> Server API URL: `http://127.0.0.1:8000/`
+
+### 4. 🌐 Launch Frontend Application
+In a separate terminal, serve the frontend on port `5000`:
+```bash
+cd Frontend
+python -m http.server 5000 --bind 127.0.0.1
+```
+> Web Application URL: `http://127.0.0.1:5000/`
+
+---
+
+## 🔑 Demo Test Accounts
+
+| Account Type | Email Address | Password | Privileges |
+| :--- | :--- | :--- | :--- |
+| 👑 **System Administrator** | `admin@ibs.com` | `admin123` | Full DB CRUD Access |
+| 🧳 **Sample Customer** | `rahul@gmail.com` | `rahul123` | Bookings & Invoices |
+
+---
+
+## 🤝 Collaborators & Contributing
+
+This project is actively maintained under collaborative development:
+
+| Contributor | Role | GitHub Profile |
 | :--- | :--- | :--- |
-| **Administrator** | `admin@ibs.com` | `admin123` |
-| **Customer** | `rahul@gmail.com` | `rahul123` |
+| **Venkata Hemanth Kumar Chennuru** | Lead Full-Stack Developer & Maintainer | [@hemanthc29](https://github.com/hemanthc29) |
+| **Yagneswari Mannam** | Collaborator | [@mannamyagneswari14](https://github.com/mannamyagneswari14) |
 
 ---
 
-## ⚡ Setup & Installation
-
-1. **Seed Database**:
-   ```bash
-   cd Backend
-   python seed_db.py
-   ```
-2. **Start Backend Server**:
-   ```bash
-   python manage.py runserver 127.0.0.1:8000
-   ```
-3. **Serve Frontend App**:
-   ```bash
-   cd ../Frontend
-   python -m http.server 5000 --bind 127.0.0.1
-   ```
-4. **Access in Browser**: Open `http://localhost:5000`
+<div align="center">
+  <b>Made with ❤️ for PFSD Full-Stack Web Development</b>
+  <br/>
+  ⭐ <i>Star this repository if you find it helpful!</i> ⭐
+</div>
