@@ -7,7 +7,7 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Postman](https://img.shields.io/badge/Postman-v2.1-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://www.postman.com/)
 [![SQLite](https://img.shields.io/badge/SQLite-MySQL%20Compatible-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
-[![Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)](https://github.com/hemanthc29/Island-Booking-System)
+[![Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=for-the-badge)](https://github.com/mannamyagneswari14/useState)
 
 <p align="center">
   <b>An Ultra-Premium, Full-Stack Island Vacation & Resort Booking Management Platform</b>
@@ -42,6 +42,13 @@
 - 📊 **Customer Dashboard**: Historical booking timeline, payment status tracking, and downloadable travel receipts.
 - 🔐 **Admin Control Panel**: Complete full-stack CRUD interface for Customer accounts, Destinations, Packages, Reservations, and Revenue.
 - 🔌 **20 Standard RESTful Endpoints**: Full CORS enabled for cross-platform integration (Web, Mobile, Postman).
+
+---
+
+## 🤝 Collaborative Repositories
+
+- 🐙 **Repository 1**: [mannamyagneswari14/useState](https://github.com/mannamyagneswari14/useState)
+- 🐙 **Repository 2**: [hemanthc29/Island-Booking-System](https://github.com/hemanthc29/Island-Booking-System)
 
 ---
 
@@ -245,8 +252,8 @@ This project is actively maintained under collaborative development:
 
 | Contributor | Role | GitHub Profile |
 | :--- | :--- | :--- |
-| **Venkata Hemanth Kumar Chennuru** | Lead Full-Stack Developer & Maintainer | [@hemanthc29](https://github.com/hemanthc29) |
-| **Yagneswari Mannam** | Collaborator | [@mannamyagneswari14](https://github.com/mannamyagneswari14) |
+| **Yagneswari Mannam** | Repository Owner & Collaborator | [@mannamyagneswari14](https://github.com/mannamyagneswari14) |
+| **Venkata Hemanth Kumar Chennuru** | Full-Stack Developer & Maintainer | [@hemanthc29](https://github.com/hemanthc29) |
 
 ---
 
