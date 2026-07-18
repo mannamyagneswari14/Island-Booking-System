@@ -246,17 +246,6 @@ python -m http.server 5000 --bind 127.0.0.1
 
 ---
 
-## 🤝 Collaborators & Contributing
-
-This project is actively maintained under collaborative development:
-
-| Contributor | Role | GitHub Profile |
-| :--- | :--- | :--- |
-| **Yagneswari Mannam** | Repository Owner & Collaborator | [@mannamyagneswari14](https://github.com/mannamyagneswari14) |
-| **Venkata Hemanth Kumar Chennuru** | Full-Stack Developer & Maintainer | [@hemanthc29](https://github.com/hemanthc29) |
-
----
-
 <div align="center">
   <b>Made with ❤️ for PFSD Full-Stack Web Development</b>
   <br/>
